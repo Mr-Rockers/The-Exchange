@@ -74,14 +74,25 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\ProgrammingLibraries\glm-0.9.7.4\glm;C:\ProgrammingLibraries\glew-1.13.0\include;C:\ProgrammingLibraries\SDL2-2.0.7\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>C:\ProgrammingLibraries\Simple OpenGL Image Library\vc2015lib;C:\ProgrammingLibraries\glew-1.13.0\lib\Release\Win32;C:\ProgrammingLibraries\SDL2-2.0.7\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glew32s.lib;SDL2.lib;SDL2main.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\ProgrammingLibraries\glm-0.9.7.4\glm;C:\ProgrammingLibraries\glew-1.13.0\include;C:\ProgrammingLibraries\SDL2-2.0.7\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>C:\ProgrammingLibraries\glew-1.13.0\lib\Release\x64;C:\ProgrammingLibraries\SDL2-2.0.7\lib\x64;C:\ProgrammingLibraries\Simple OpenGL Image Library\vc2015lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glew32s.lib;SDL2.lib;SDL2main.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -90,10 +101,14 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\ProgrammingLibraries\glm-0.9.7.4\glm;C:\ProgrammingLibraries\glew-1.13.0\include;C:\ProgrammingLibraries\SDL2-2.0.7\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>C:\ProgrammingLibraries\Simple OpenGL Image Library\vc2015lib;C:\ProgrammingLibraries\glew-1.13.0\lib\Release\Win32;C:\ProgrammingLibraries\SDL2-2.0.7\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glew32s.lib;SDL2.lib;SDL2main.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -103,13 +118,36 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\ProgrammingLibraries\glm-0.9.7.4\glm;C:\ProgrammingLibraries\glew-1.13.0\include;C:\ProgrammingLibraries\SDL2-2.0.7\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>C:\ProgrammingLibraries\glew-1.13.0\lib\Release\x64;C:\ProgrammingLibraries\SDL2-2.0.7\lib\x64;C:\ProgrammingLibraries\Simple OpenGL Image Library\vc2015lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glew32s.lib;SDL2.lib;SDL2main.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Audio.cpp" />
+    <ClCompile Include="AudioEffects.cpp" />
+    <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="EntityPlayer.cpp" />
+    <ClCompile Include="EntityUpdateable.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="RenderModel.cpp" />
+    <ClCompile Include="Shader.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Audio.h" />
+    <ClInclude Include="AudioEffects.h" />
+    <ClInclude Include="Entity.h" />
+    <ClInclude Include="Externals.h" />
+    <ClInclude Include="ExtraMath.h" />
+    <ClInclude Include="Input.h" />
+    <ClInclude Include="Logic.h" />
+    <ClInclude Include="Render.h" />
+    <ClInclude Include="RenderModel.h" />
+    <ClInclude Include="Shader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

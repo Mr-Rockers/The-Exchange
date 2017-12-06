@@ -1,0 +1,49 @@
+This model
+
+Lines not beginning with '[' are ignored,
+and can be used as space for comments.
+
+[shdr]test
+The recommended shader.
+[ptln]4
+The amount of vertex points. -Point Length.
+
+
+
+BOTTOM LEFT
+
+[dtpt]0
+The current vertex point. -Data Point.
+[vert]-0.75,-0.75,0.0
+The 3D co-ordindate.
+[uv--]0.0, 0.0
+The point's uv information.
+[rgba]1.0,0.0,0.0,1.0
+The point's colour.
+
+
+TOP LEFT
+
+[dtpt]1
+[vert]-0.75,0.75,0.0
+[uv--]0.0,0.0
+[rgba]0.0,1.0,0.0,1.0
+
+
+TOP RIGHT
+
+[dtpt]2
+[vert]0.75,0.75,0.0
+[uv--]0.0,0.0
+[rgba]0.0,0.0,1.0,1.0
+
+
+BOTTOM RIGHT
+
+[dtpt]3
+[vert]0.75,-0.75,0.0
+[uv--]0.0,0.0
+[rgba]1.0,1.0,1.0,1.0
+
+[orct]6
+[ordr]0,1,3,3,1,2
