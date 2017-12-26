@@ -50,6 +50,8 @@ int main(int argc, char** argv) {
 	EntityAudioSource testAudioSource = EntityAudioSource(&playerAudioTest, true, true, 10.0f);
 	testAudioSource.setPosition(glm::vec3(0.0f, 0.0f, -5.0f));*/
 
+	//PLAYER
+	EntityPlayer localPlayer = EntityPlayer("localhost", &render);
 
 	//GL INIT
 	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
@@ -75,6 +77,22 @@ int main(int argc, char** argv) {
 		while (SDL_PollEvent(&e)){
 			if (e.type == SDL_QUIT) {
 				run = false;
+			}
+			if (e.type == SDL_KEYDOWN) {
+				std::cout << e.key.keysym.scancode << "\n";
+
+				if (e.key.keysym.scancode == 26) { //W, forward.
+					localPlayer.translate(glm::vec3(localPlayer.getForwardLookDirection() * localPlayer.walkingSpeed));
+				}
+				if (e.key.keysym.scancode == 22) { //S, back.
+					localPlayer.translate(glm::vec3(localPlayer.getForwardLookDirection() * -localPlayer.walkingSpeed));
+				}
+				if (e.key.keysym.scancode == 4) {  //A, left.
+					localPlayer.translate(glm::vec3(localPlayer.getRelativeDirection(0.0f, -180.0f) * localPlayer.strafeSpeed));
+				}
+				if (e.key.keysym.scancode == 7) {  //D, left.
+					localPlayer.translate(glm::vec3(localPlayer.getRelativeDirection(0.0f, 180.0f) * localPlayer.strafeSpeed));
+				}
 			}
 		}
 

@@ -2,6 +2,7 @@
 #define ENT_LOGIC_H
 
 #include "Externals.h"
+#include "Render.h"
 
 typedef unsigned int entity_id;
 
@@ -54,18 +55,24 @@ extern std::vector<EntityUpdateable*> ENTITY_UPDATEABLE_REGISTER_EXTRN;
 
 class EntityPlayer : public EntityUpdateable {
 protected:
-	//In Degrees
-	bool isClient;
-	
+	Render* render;
+
 public:
 	float cameraPitch, cameraYaw;
+	float walkingSpeed, strafeSpeed;
 
-	EntityPlayer(std::string username, bool isClient);
+	//Leave render null if player is not client.
+	EntityPlayer(std::string username, Render* render);
 	virtual ~EntityPlayer();
 
 	void draw();
 	void drawClientside();
 
+	void translate(glm::vec3 direction); //OVERRIDE
+
+	bool isClient();
+
+	glm::vec3 getRelativeDirection(float pitchMod, float yawMod);
 	glm::vec3 getForwardLookDirection();
 };
 

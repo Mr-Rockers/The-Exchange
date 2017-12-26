@@ -62,7 +62,7 @@ void EntityAudioSource::applyEffects() {
 	if (this->isPlaying()) {
 		this->panArguments[0] = 1.0f - this->pan;
 		this->panArguments[1] = this->pan;
-		this->panArguments[2] = 0.1f;
+		this->panArguments[2] = 0.1f; //VOLUME
 
 	}
 }

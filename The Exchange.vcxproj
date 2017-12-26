@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{377F1031-4083-4D96-9631-8C51CA407349}</ProjectGuid>
     <RootNamespace>TheExchange</RootNamespace>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -74,10 +74,10 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\ProgrammingLibraries\glm-0.9.7.4\glm;C:\ProgrammingLibraries\glew-1.13.0\include;C:\ProgrammingLibraries\SDL2-2.0.7\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Programming Libraries\glm\glm;C:\Programming Libraries\glew\include;C:\Programming Libraries\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>C:\ProgrammingLibraries\Simple OpenGL Image Library\vc2015lib;C:\ProgrammingLibraries\glew-1.13.0\lib\Release\Win32;C:\ProgrammingLibraries\SDL2-2.0.7\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Programming Libraries\Simple OpenGL Image Library\vc2015lib;C:\Programming Libraries\glew\lib\Release\Win32;C:\Programming Libraries\SDL2\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>opengl32.lib;glew32s.lib;SDL2.lib;SDL2main.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
@@ -87,10 +87,10 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\ProgrammingLibraries\glm-0.9.7.4\glm;C:\ProgrammingLibraries\glew-1.13.0\include;C:\ProgrammingLibraries\SDL2-2.0.7\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Programming Libraries\glm\glm;C:\Programming Libraries\glew\include;C:\Programming Libraries\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>C:\ProgrammingLibraries\glew-1.13.0\lib\Release\x64;C:\ProgrammingLibraries\SDL2-2.0.7\lib\x64;C:\ProgrammingLibraries\Simple OpenGL Image Library\vc2015lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Programming Libraries\glew\lib\Release\x64;C:\Programming Libraries\SDL2\lib\x64;C:\Programming Libraries\Simple OpenGL Image Library\vc2015lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>opengl32.lib;glew32s.lib;SDL2.lib;SDL2main.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -101,12 +101,12 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\ProgrammingLibraries\glm-0.9.7.4\glm;C:\ProgrammingLibraries\glew-1.13.0\include;C:\ProgrammingLibraries\SDL2-2.0.7\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Programming Libraries\glm\glm;C:\Programming Libraries\glew\include;C:\Programming Libraries\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>C:\ProgrammingLibraries\Simple OpenGL Image Library\vc2015lib;C:\ProgrammingLibraries\glew-1.13.0\lib\Release\Win32;C:\ProgrammingLibraries\SDL2-2.0.7\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Programming Libraries\Simple OpenGL Image Library\vc2015lib;C:\Programming Libraries\glew\lib\Release\Win32;C:\Programming Libraries\SDL2\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>opengl32.lib;glew32s.lib;SDL2.lib;SDL2main.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
@@ -118,12 +118,12 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\ProgrammingLibraries\glm-0.9.7.4\glm;C:\ProgrammingLibraries\glew-1.13.0\include;C:\ProgrammingLibraries\SDL2-2.0.7\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Programming Libraries\glm\glm;C:\Programming Libraries\glew\include;C:\Programming Libraries\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>C:\ProgrammingLibraries\glew-1.13.0\lib\Release\x64;C:\ProgrammingLibraries\SDL2-2.0.7\lib\x64;C:\ProgrammingLibraries\Simple OpenGL Image Library\vc2015lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Programming Libraries\glew\lib\Release\x64;C:\Programming Libraries\SDL2\lib\x64;C:\Programming Libraries\Simple OpenGL Image Library\vc2015lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>opengl32.lib;glew32s.lib;SDL2.lib;SDL2main.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
