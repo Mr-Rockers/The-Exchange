@@ -26,30 +26,27 @@ public:
 	glm::vec3 getPosition();
 };
 
+//Automagically registers to entityUpdateableRegister upon creation.
+//Instead of position data updating immediately, position is updated whenever 
+//the update function is called. This mostly allows for speed and acceleration
+//calculations to be performed quickly and easily. These will only be implemented
+//when they're needed.
 class EntityUpdateable : public Entity {
-	bool hasNewPosition;
-	glm::vec3 newPosition, lastPosition;
-	float speed, deltaTime;
-
-	void updateSpeed();
+	glm::vec3 newPosition;
+	float deltaTime;
 public:
 
-	//Automagically registers to entityUpdateableRegister.
 	EntityUpdateable(std::string unlocalisedName);
 	virtual ~EntityUpdateable();
 
 	virtual void update(float deltaTime);
-
-	//For distance, speed, time calculations, etc.
 	virtual void postUpdate();
 
-	//Sets the entities position. Use this instead of manually setting vector.
+	//Sets the entities position on update. Use this instead of manually setting vector.
 	void setPosition(glm::vec3 newPos); //OVERRIDE
 
-	//Translates entity at the direction by deltaTime.
+	//Translates entity via update with deltaTime.
 	void translate(glm::vec3 direction);
-
-	float getSpeed();
 };
 extern std::vector<EntityUpdateable*> ENTITY_UPDATEABLE_REGISTER_EXTRN;
 
@@ -69,6 +66,7 @@ public:
 	void drawClientside();
 
 	void translate(glm::vec3 direction); //OVERRIDE
+	void rotateCamera(float pitchMod, float yawMod);
 
 	bool isClient();
 

@@ -72,13 +72,13 @@
     <ClCompile Include="AudioEffects.cpp">
       <Filter>Source Files\Game Engine\Audio Classes</Filter>
     </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>Source Files\Game Logic</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Logic.h">
       <Filter>Header Files\Game Logic</Filter>
-    </ClInclude>
-    <ClInclude Include="Input.h">
-      <Filter>Header Files\Game Engine</Filter>
     </ClInclude>
     <ClInclude Include="Render.h">
       <Filter>Header Files\Game Engine\Render Classes</Filter>
@@ -103,6 +103,9 @@
     </ClInclude>
     <ClInclude Include="Externals.h">
       <Filter>Header Files\Game Engine\Utility Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>Header Files\Game Logic</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

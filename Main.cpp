@@ -2,6 +2,7 @@
 #include "Render.h"
 #include "Entity.h"
 #include "Audio.h"
+#include "Input.h"
 
 int main(int argc, char** argv) {
 
@@ -79,22 +80,22 @@ int main(int argc, char** argv) {
 				run = false;
 			}
 			if (e.type == SDL_KEYDOWN) {
-				std::cout << e.key.keysym.scancode << "\n";
-
-				if (e.key.keysym.scancode == 26) { //W, forward.
-					localPlayer.translate(glm::vec3(localPlayer.getForwardLookDirection() * localPlayer.walkingSpeed));
-				}
-				if (e.key.keysym.scancode == 22) { //S, back.
-					localPlayer.translate(glm::vec3(localPlayer.getForwardLookDirection() * -localPlayer.walkingSpeed));
-				}
-				if (e.key.keysym.scancode == 4) {  //A, left.
-					localPlayer.translate(glm::vec3(localPlayer.getRelativeDirection(0.0f, -180.0f) * localPlayer.strafeSpeed));
-				}
-				if (e.key.keysym.scancode == 7) {  //D, left.
-					localPlayer.translate(glm::vec3(localPlayer.getRelativeDirection(0.0f, 180.0f) * localPlayer.strafeSpeed));
-				}
+				Input::HandleKeyDown(&localPlayer, &e.key);
+			}
+			if (e.type == SDL_KEYUP) {
+				Input::HandleKeyUp(&localPlayer, &e.key);
+			}
+			if (e.type == SDL_MOUSEMOTION) {
+				Input::HandleMouse(&localPlayer, &e.motion);
+			}
+			if (e.type == SDL_MOUSEBUTTONDOWN) {
+				Input::HandleMouseButtonDown(&localPlayer, &e.button);
+			}
+			if (e.type == SDL_MOUSEBUTTONUP) {
+				Input::HandleMouseButtonUp(&localPlayer, &e.button);
 			}
 		}
+		Input::Update(&localPlayer);
 
 		//PHYSICS
 
@@ -102,13 +103,17 @@ int main(int argc, char** argv) {
 
 		//RENDER
 		SDL_GetWindowSize(render.mainWindow, &render.scrW, &render.scrH);
+
 		render.projectionMatrix = glm::perspective(glm::radians(45.0f), (float)render.scrW / (float)render.scrH, 0.1f, 100.0f);
+		render.viewMatrix = glm::lookAt(localPlayer.getPosition(), localPlayer.getPosition() + localPlayer.getForwardLookDirection(), render.UP);
+
+		//std::cout << "Direction - X: " << render.vM_direction.x << " Y: " << render.vM_direction.y << " Z: " << render.vM_direction.z << "\n";
 
 		glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
 
 		cube1ModelMatrix = glm::rotate(cube1ModelMatrix, glm::radians(deltaTime * 10.0f), glm::vec3(1.0f, 1.0f, 0.0f));
 		cube2ModelMatrix = glm::rotate(cube2ModelMatrix, glm::radians(-deltaTime * 10.0f), glm::vec3(0.0f, 1.0f, 1.0f));
-		
+	
 		basicShader.updateShader(new glm::mat4*[3]{ &render.projectionMatrix, &render.viewMatrix, &cube1ModelMatrix }, new char*[3]{ "projection", "view", "transform" }, 3);
 		cube.draw();
 		basicShader.updateShader(new glm::mat4*[3]{ &render.projectionMatrix, &render.viewMatrix, &cube2ModelMatrix }, new char*[3]{ "projection", "view", "transform" }, 3);

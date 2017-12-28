@@ -4,8 +4,8 @@ EntityPlayer::EntityPlayer(std::string username, Render* render) : EntityUpdatea
 	cameraPitch = 90.0f;
 	cameraYaw = 0.0f;
 
-	walkingSpeed = 1.0f;
-	strafeSpeed = 1.0f;
+	walkingSpeed = 10.0f;
+	strafeSpeed = 8.0f;
 }
 
 EntityPlayer::~EntityPlayer() {
@@ -23,12 +23,12 @@ void EntityPlayer::drawClientside() {
 void EntityPlayer::translate(glm::vec3 direction) {
 	EntityUpdateable::translate(direction);
 
-	if (this->isClient()) {
+}
 
-		this->render->viewMatrix = glm::translate(this->render->viewMatrix, direction);
-		if (direction.x != 0.0f) {
-			this->render->viewMatrix = glm::translate(this->render->viewMatrix, glm::cross(direction, this->render->UP));
-		}
+void EntityPlayer::rotateCamera(float pitchMod, float yawMod) {
+	if (this->isClient()) {
+		this->cameraPitch += pitchMod;
+		this->cameraYaw += yawMod;
 	}
 }
 
@@ -37,7 +37,7 @@ bool EntityPlayer::isClient() {
 }
 
 glm::vec3 EntityPlayer::getRelativeDirection(float pitchMod, float yawMod) {
-	return glm::vec3(smartSin<float>(this->cameraYaw + yawMod), smartCos<float>(this->cameraPitch + pitchMod), smartCos<float>(this->cameraYaw + yawMod));
+	return glm::vec3(smartSin<float>(this->cameraYaw + yawMod), smartCos<float>(this->cameraPitch + pitchMod), -smartCos<float>(this->cameraYaw + yawMod));
 }
 
 glm::vec3 EntityPlayer::getForwardLookDirection() {
