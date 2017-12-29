@@ -1,8 +1,8 @@
-#include "Externals.h"
-#include "Render.h"
-#include "Entity.h"
-#include "Audio.h"
-#include "Input.h"
+#include "Game Engine/Utility Classes/Externals.h"
+#include "Game Engine/Audio Classes/Audio.h"
+#include "Game Engine/Render Classes/Render.h"
+#include "Game Logic/Entity.h"
+#include "Game Logic/Input.h"
 
 int main(int argc, char** argv) {
 

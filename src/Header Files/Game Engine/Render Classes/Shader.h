@@ -1,7 +1,7 @@
 #ifndef SHADER_H
 #define SHADER_H
 
-#include "Externals.h"
+#include "Game Engine/Utility Classes/Externals.h"
 
 class ShaderProgram {
 	GLuint shaderProgramID;

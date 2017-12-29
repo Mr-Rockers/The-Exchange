@@ -1,4 +1,4 @@
-#include "AudioEffects.h"
+#include "Game Engine/Audio Classes/AudioEffects.h"
 
 AudioEffectProgram AudioEffects::pan(int chan, void* stream, int len, void* udata) {
 	float* args = (float*)udata;

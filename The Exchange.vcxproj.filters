@@ -1,111 +1,110 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
+    <Filter Include="src">
+      <UniqueIdentifier>{860d491c-d372-4d26-b134-70a528798990}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Source Files">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Header Files">
+    <Filter Include="src\Source Files\Game Logic">
+      <UniqueIdentifier>{b3e28c03-7f9f-45d7-9e96-0f97071265b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Source Files\Game Logic\Entity Classes">
+      <UniqueIdentifier>{bd5c098e-56ad-495b-bc97-d7666eb871d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Source Files\Game Engine">
+      <UniqueIdentifier>{5f398445-06c6-4729-8eb6-8b1d5f10f7fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Source Files\Game Engine\Render Classes">
+      <UniqueIdentifier>{57a7ed14-c71e-445a-b2b4-1f6754fb4313}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Source Files\Game Engine\Audio Classes">
+      <UniqueIdentifier>{b74f1cbd-eba7-4209-94f4-045ff0c77590}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Source Files\Game Engine\Utility Classes">
+      <UniqueIdentifier>{13a0dc86-cc34-4e21-b4a7-fb4ea19321c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Header Files">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="Header Files\Game Logic">
+    <Filter Include="src\Header Files\Game Logic">
       <UniqueIdentifier>{3c05b249-b65f-4994-93bc-da876aefcfff}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Game Logic">
-      <UniqueIdentifier>{b3e28c03-7f9f-45d7-9e96-0f97071265b2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Game Engine">
+    <Filter Include="src\Header Files\Game Engine">
       <UniqueIdentifier>{b7ac71c8-d7c1-4f10-b01d-701c14273034}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Game Engine">
-      <UniqueIdentifier>{5f398445-06c6-4729-8eb6-8b1d5f10f7fb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Game Engine\Render Classes">
+    <Filter Include="src\Header Files\Game Engine\Render Classes">
       <UniqueIdentifier>{d7fa8699-da33-43b0-9038-ae120bf3af92}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Game Engine\Render Classes">
-      <UniqueIdentifier>{57a7ed14-c71e-445a-b2b4-1f6754fb4313}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Game Logic\Entity Classes">
-      <UniqueIdentifier>{bd5c098e-56ad-495b-bc97-d7666eb871d9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Game Engine\Audio Classes">
+    <Filter Include="src\Header Files\Game Engine\Audio Classes">
       <UniqueIdentifier>{385e8ff5-2f78-4b04-bea8-a358e5d73f84}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Game Engine\Audio Classes">
-      <UniqueIdentifier>{b74f1cbd-eba7-4209-94f4-045ff0c77590}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Game Engine\Utility Classes">
+    <Filter Include="src\Header Files\Game Engine\Utility Classes">
       <UniqueIdentifier>{a8a7c5ca-4cec-44bb-a6c7-1852410b0ae2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Game Engine\Utility Classes">
-      <UniqueIdentifier>{13a0dc86-cc34-4e21-b4a7-fb4ea19321c1}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Shader.cpp">
-      <Filter>Source Files\Game Engine\Render Classes</Filter>
+    <ClCompile Include="src/Source Files/Game Engine/Audio Classes/Audio.cpp">
+      <Filter>src\Source Files\Game Engine\Audio Classes</Filter>
     </ClCompile>
-    <ClCompile Include="RenderModel.cpp">
-      <Filter>Source Files\Game Engine\Render Classes</Filter>
+    <ClCompile Include="src/Source Files/Game Engine/Audio Classes/AudioEffects.cpp">
+      <Filter>src\Source Files\Game Engine\Audio Classes</Filter>
     </ClCompile>
-    <ClCompile Include="Entity.cpp">
-      <Filter>Source Files\Game Logic\Entity Classes</Filter>
+    <ClCompile Include="src/Source Files/Game Logic/Entity Classes/Entity.cpp">
+      <Filter>src\Source Files\Game Logic\Entity Classes</Filter>
     </ClCompile>
-    <ClCompile Include="EntityPlayer.cpp">
-      <Filter>Source Files\Game Logic\Entity Classes</Filter>
+    <ClCompile Include="src/Source Files/Game Logic/Entity Classes/EntityPlayer.cpp">
+      <Filter>src\Source Files\Game Logic\Entity Classes</Filter>
     </ClCompile>
-    <ClCompile Include="EntityUpdateable.cpp">
-      <Filter>Source Files\Game Logic\Entity Classes</Filter>
+    <ClCompile Include="src/Source Files/Game Logic/Entity Classes/EntityUpdateable.cpp">
+      <Filter>src\Source Files\Game Logic\Entity Classes</Filter>
     </ClCompile>
-    <ClCompile Include="Main.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src/Source Files/Game Logic/Input.cpp">
+      <Filter>src\Source Files\Game Logic</Filter>
     </ClCompile>
-    <ClCompile Include="Audio.cpp">
-      <Filter>Source Files\Game Engine\Audio Classes</Filter>
+    <ClCompile Include="src/Source Files/Game Engine/Main.cpp">
+      <Filter>src\Source Files\Game Engine</Filter>
     </ClCompile>
-    <ClCompile Include="AudioEffects.cpp">
-      <Filter>Source Files\Game Engine\Audio Classes</Filter>
+    <ClCompile Include="src/Source Files/Game Engine/Render Classes/RenderModel.cpp">
+      <Filter>src\Source Files\Game Engine\Render Classes</Filter>
     </ClCompile>
-    <ClCompile Include="Input.cpp">
-      <Filter>Source Files\Game Logic</Filter>
+    <ClCompile Include="src/Source Files/Game Engine/Render Classes/Shader.cpp">
+      <Filter>src\Source Files\Game Engine\Render Classes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Logic.h">
-      <Filter>Header Files\Game Logic</Filter>
+    <ClInclude Include="src/Header Files/Game Engine/Audio Classes/Audio.h">
+      <Filter>src\Header Files\Game Engine\Audio Classes</Filter>
     </ClInclude>
-    <ClInclude Include="Render.h">
-      <Filter>Header Files\Game Engine\Render Classes</Filter>
+    <ClInclude Include="src/Header Files/Game Engine/Audio Classes/AudioEffects.h">
+      <Filter>src\Header Files\Game Engine\Audio Classes</Filter>
     </ClInclude>
-    <ClInclude Include="Shader.h">
-      <Filter>Header Files\Game Engine\Render Classes</Filter>
+    <ClInclude Include="src/Header Files/Game Engine/Utility Classes/Externals.h">
+      <Filter>src\Header Files\Game Engine\Utility Classes</Filter>
     </ClInclude>
-    <ClInclude Include="RenderModel.h">
-      <Filter>Header Files\Game Engine\Render Classes</Filter>
+    <ClInclude Include="src/Header Files/Game Engine/Utility Classes/ExtraMath.h">
+      <Filter>src\Header Files\Game Engine\Utility Classes</Filter>
     </ClInclude>
-    <ClInclude Include="Entity.h">
-      <Filter>Header Files\Game Logic</Filter>
+    <ClInclude Include="src/Header Files/Game Logic/Entity.h">
+      <Filter>src\Header Files\Game Logic</Filter>
     </ClInclude>
-    <ClInclude Include="Audio.h">
-      <Filter>Header Files\Game Engine\Audio Classes</Filter>
+    <ClInclude Include="src/Header Files/Game Logic/Input.h">
+      <Filter>src\Header Files\Game Logic</Filter>
     </ClInclude>
-    <ClInclude Include="AudioEffects.h">
-      <Filter>Header Files\Game Engine\Audio Classes</Filter>
+    <ClInclude Include="src/Header Files/Game Logic/Logic.h">
+      <Filter>src\Header Files\Game Logic</Filter>
     </ClInclude>
-    <ClInclude Include="ExtraMath.h">
-      <Filter>Header Files\Game Engine\Utility Classes</Filter>
+    <ClInclude Include="src/Header Files/Game Engine/Render Classes/Render.h">
+      <Filter>src\Header Files\Game Engine\Render Classes</Filter>
     </ClInclude>
-    <ClInclude Include="Externals.h">
-      <Filter>Header Files\Game Engine\Utility Classes</Filter>
+    <ClInclude Include="src/Header Files/Game Engine/Render Classes/RenderModel.h">
+      <Filter>src\Header Files\Game Engine\Render Classes</Filter>
     </ClInclude>
-    <ClInclude Include="Input.h">
-      <Filter>Header Files\Game Logic</Filter>
+    <ClInclude Include="src/Header Files/Game Engine/Render Classes/Shader.h">
+      <Filter>src\Header Files\Game Engine\Render Classes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

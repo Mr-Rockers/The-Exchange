@@ -1,8 +1,8 @@
 #ifndef ENT_LOGIC_H
 #define ENT_LOGIC_H
 
-#include "Externals.h"
-#include "Render.h"
+#include "Game Engine/Utility Classes/Externals.h"
+#include "Game Engine/Render Classes/Render.h"
 
 typedef unsigned int entity_id;
 

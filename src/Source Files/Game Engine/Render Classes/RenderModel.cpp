@@ -1,5 +1,5 @@
-#include "RenderModel.h"
-#include "Shader.h"
+#include "Game Engine/Render Classes/RenderModel.h"
+#include "Game Engine/Render Classes/Shader.h"
 
 void RenderModel::Load(std::string& location, std::string& preferredShader, int& elementCount, std::vector<int>& elementOrder, std::vector<float>& elementColours, std::vector<float>& elementCoordPoints, std::vector<float>& elementUVs) {
 

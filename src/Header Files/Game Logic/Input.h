@@ -1,8 +1,8 @@
 #ifndef INPUT_H
 #define INPUT_H
 
-#include "Externals.h"
-#include "Entity.h"
+#include "Game Engine/Utility Classes/Externals.h"
+#include "Game Logic/Entity.h"
 
 struct Input {
 	static void HandleKeyDown(EntityPlayer* player, SDL_KeyboardEvent* kE);

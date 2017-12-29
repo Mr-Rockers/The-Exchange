@@ -1,9 +1,9 @@
 #ifndef RENDER_H
 #define RENDER_H
 
-#include "Externals.h"
-#include "Shader.h"
-#include "RenderModel.h"
+#include "Game Engine/Utility Classes/Externals.h"
+#include "Game Engine/Render Classes/Shader.h"
+#include "Game Engine/Render Classes/RenderModel.h"
 
 class Render {
 public:

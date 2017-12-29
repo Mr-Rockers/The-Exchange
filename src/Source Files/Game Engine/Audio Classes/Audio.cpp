@@ -1,4 +1,4 @@
-#include "Audio.h"
+#include "Game Engine/Audio Classes/Audio.h"
 
 AudioClip::AudioClip(std::string location) {
 	sample = Mix_LoadWAV(location.c_str());

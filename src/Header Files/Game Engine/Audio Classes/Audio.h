@@ -1,9 +1,9 @@
 #ifndef AUDIO_H
 #define AUDIO_H
 
-#include "Externals.h"
-#include "Entity.h"
-#include "AudioEffects.h"
+#include "Game Engine/Utility Classes/Externals.h"
+#include "Game Engine/Audio Classes/AudioEffects.h"
+#include "Game Logic/Entity.h"
 
 class AudioClip {
 	Mix_Chunk* sample;

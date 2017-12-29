@@ -1,4 +1,4 @@
-#include "Entity.h"
+#include "Game Logic/Entity.h"
 
 std::vector<EntityUpdateable*> ENTITY_UPDATEABLE_REGISTER_EXTRN = std::vector<EntityUpdateable*>();
 

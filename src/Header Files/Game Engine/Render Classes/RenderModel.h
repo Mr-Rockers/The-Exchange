@@ -1,7 +1,7 @@
 #ifndef RENDERMODEL_H
 #define RENDERMODEL_H
 
-#include "Externals.h"
+#include "Game Engine/Utility Classes/Externals.h"
 
 class RenderModel {
 	GLuint VAO, elementOrderCount;

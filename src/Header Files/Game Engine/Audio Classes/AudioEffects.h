@@ -5,7 +5,7 @@
 #define AudioEffectProgram void
 #endif
 
-#include "Externals.h"
+#include "Game Engine/Utility Classes/Externals.h"
 
 namespace AudioEffects {
 	//Pans the audio.

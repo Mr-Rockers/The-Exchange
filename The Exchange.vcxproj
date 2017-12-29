@@ -68,7 +68,12 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>src\Header Files;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>src\Header Files;$(IncludePath)</IncludePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -128,27 +133,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Audio.cpp" />
-    <ClCompile Include="AudioEffects.cpp" />
-    <ClCompile Include="Entity.cpp" />
-    <ClCompile Include="EntityPlayer.cpp" />
-    <ClCompile Include="EntityUpdateable.cpp" />
-    <ClCompile Include="Input.cpp" />
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="RenderModel.cpp" />
-    <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="src/Source Files/Game Engine/Audio Classes/Audio.cpp" />
+    <ClCompile Include="src/Source Files/Game Engine/Audio Classes/AudioEffects.cpp" />
+    <ClCompile Include="src/Source Files/Game Logic/Entity Classes/Entity.cpp" />
+    <ClCompile Include="src/Source Files/Game Logic/Entity Classes/EntityPlayer.cpp" />
+    <ClCompile Include="src/Source Files/Game Logic/Entity Classes/EntityUpdateable.cpp" />
+    <ClCompile Include="src/Source Files/Game Logic/Input.cpp" />
+    <ClCompile Include="src/Source Files/Game Engine/Main.cpp" />
+    <ClCompile Include="src/Source Files/Game Engine/Render Classes/RenderModel.cpp" />
+    <ClCompile Include="src/Source Files/Game Engine/Render Classes/Shader.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Audio.h" />
-    <ClInclude Include="AudioEffects.h" />
-    <ClInclude Include="Entity.h" />
-    <ClInclude Include="Externals.h" />
-    <ClInclude Include="ExtraMath.h" />
-    <ClInclude Include="Input.h" />
-    <ClInclude Include="Logic.h" />
-    <ClInclude Include="Render.h" />
-    <ClInclude Include="RenderModel.h" />
-    <ClInclude Include="Shader.h" />
+    <ClInclude Include="src/Header Files/Game Engine/Audio Classes/Audio.h" />
+    <ClInclude Include="src/Header Files/Game Engine/Audio Classes/AudioEffects.h" />
+    <ClInclude Include="src/Header Files/Game Logic/Entity.h" />
+    <ClInclude Include="src/Header Files/Game Engine/Utility Classes/Externals.h" />
+    <ClInclude Include="src/Header Files/Game Engine/Utility Classes/ExtraMath.h" />
+    <ClInclude Include="src/Header Files/Game Logic/Input.h" />
+    <ClInclude Include="src/Header Files/Game Logic/Logic.h" />
+    <ClInclude Include="src/Header Files/Game Engine/Render Classes/Render.h" />
+    <ClInclude Include="src/Header Files/Game Engine/Render Classes/RenderModel.h" />
+    <ClInclude Include="src/Header Files/Game Engine/Render Classes/Shader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

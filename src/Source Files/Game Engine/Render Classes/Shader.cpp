@@ -1,4 +1,4 @@
-#include "Shader.h"
+#include "Game Engine/Render Classes/Shader.h"
 
 std::map<std::string, ShaderProgram*> SHADER_REGISTER_EXTRN = std::map<std::string, ShaderProgram*>();
 
@@ -95,7 +95,7 @@ void ShaderProgram::updateShader(glm::mat4* matrix, char* uniform) {
 }
 
 void ShaderProgram::updateShader(glm::mat4* matrices[], char* uniforms[], unsigned int count) {
-	for (int i = 0; i < count; i++) {
+	for (unsigned int i = 0; i < count; i++) {
 		this->updateShader(matrices[i], uniforms[i]);
 	}
 }
