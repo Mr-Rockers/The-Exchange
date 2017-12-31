@@ -4,6 +4,7 @@
 #include "Game Engine/Utility Classes/Externals.h"
 #include "Game Engine/Render Classes/Render.h"
 
+
 typedef unsigned int entity_id;
 
 class Entity {
@@ -16,6 +17,7 @@ protected:
 public:
 	static entity_id ID_INCREMENT; //SERVER SIDE
 
+	Entity() {}
 	Entity(std::string unlocalisedName);
 	virtual ~Entity();
 
@@ -35,12 +37,14 @@ class EntityUpdateable : public Entity {
 	glm::vec3 newPosition;
 	float deltaTime;
 public:
-
+	EntityUpdateable() {}
 	EntityUpdateable(std::string unlocalisedName);
 	virtual ~EntityUpdateable();
 
 	virtual void update(float deltaTime);
 	virtual void postUpdate();
+
+	virtual void draw() {}
 
 	//Sets the entities position on update. Use this instead of manually setting vector.
 	void setPosition(glm::vec3 newPos); //OVERRIDE
@@ -53,25 +57,36 @@ extern std::vector<EntityUpdateable*> ENTITY_UPDATEABLE_REGISTER_EXTRN;
 class EntityPlayer : public EntityUpdateable {
 protected:
 	Render* render;
-
 public:
+
 	float cameraPitch, cameraYaw;
 	float walkingSpeed, strafeSpeed;
 
-	//Leave render null if player is not client.
-	EntityPlayer(std::string username, Render* render);
+	bool consoleEnabled;
+
+	EntityPlayer() {}
+	EntityPlayer(std::string username);
 	virtual ~EntityPlayer();
 
+	void update(float deltaTime);
+
+	void setRender(Render* newRender);
 	void draw();
 	void drawClientside();
 
-	void translate(glm::vec3 direction); //OVERRIDE
+	void rotateCameraInput(int xRel, int yRel);
 	void rotateCamera(float pitchMod, float yawMod);
 
+	void enableCursor(bool enabled);
+	void toggleConsole();
+	
 	bool isClient();
+	bool isGameInFocus();
 
 	glm::vec3 getRelativeDirection(float pitchMod, float yawMod);
 	glm::vec3 getForwardLookDirection();
 };
+
+extern EntityPlayer LOCAL_PLAYER;
 
 #endif

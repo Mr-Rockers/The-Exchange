@@ -1,8 +1,11 @@
 #include "Game Logic/Input.h"
+#include "Game Logic/Entity.h"
 
+//EntityPlayer LOCAL_PLAYER;
 bool dirForward = false, dirBackward = false, dirSLeft = false, dirSRight = false;
 
-void Input::HandleKeyDown(EntityPlayer* player, SDL_KeyboardEvent* kE) {
+void Input::HandleKeyDown(SDL_KeyboardEvent* kE) {
+
 	switch (kE->keysym.sym) {
 		case SDLK_w:
 			dirForward = true;
@@ -16,12 +19,15 @@ void Input::HandleKeyDown(EntityPlayer* player, SDL_KeyboardEvent* kE) {
 		case SDLK_d:
 			dirSRight = true;
 			break;
+		case SDLK_TAB:
+			LOCAL_PLAYER.toggleConsole();
+			break;
 		default:
 			break;
 	}
 }
 
-void Input::HandleKeyUp(EntityPlayer* player, SDL_KeyboardEvent* kE) {
+void Input::HandleKeyUp(SDL_KeyboardEvent* kE) {
 	switch (kE->keysym.sym) {
 	case SDLK_w:
 		dirForward = false;
@@ -40,51 +46,52 @@ void Input::HandleKeyUp(EntityPlayer* player, SDL_KeyboardEvent* kE) {
 	}
 }
 
-void Input::HandleMovement(EntityPlayer* player, MovementDirection direction) {
-	glm::vec3 perpendicularDirection = glm::vec3(player->getRelativeDirection(0.0f, 90.0f) * player->strafeSpeed);
+void Input::HandleMovement(MovementDirection direction) {
 
-	switch (direction) {
+	if (LOCAL_PLAYER.isGameInFocus()) {
+		glm::vec3 perpendicularDirection = glm::vec3(LOCAL_PLAYER.getRelativeDirection(0.0f, 90.0f) * LOCAL_PLAYER.strafeSpeed);
+
+		switch (direction) {
 		case MovementDirection::Forward:
-			player->translate(glm::vec3(player->getForwardLookDirection() * player->walkingSpeed));
+			LOCAL_PLAYER.translate(glm::vec3(LOCAL_PLAYER.getForwardLookDirection() * LOCAL_PLAYER.walkingSpeed));
 			break;
 		case MovementDirection::Backward:
-			player->translate(glm::vec3(player->getForwardLookDirection() * -player->walkingSpeed));
+			LOCAL_PLAYER.translate(glm::vec3(LOCAL_PLAYER.getForwardLookDirection() * -LOCAL_PLAYER.walkingSpeed));
 			break;
 		case MovementDirection::StrafeLeft:
-			player->translate(glm::vec3(-perpendicularDirection.x, 0.0f, -perpendicularDirection.z));
+			LOCAL_PLAYER.translate(glm::vec3(-perpendicularDirection.x, 0.0f, -perpendicularDirection.z));
 			break;
 		case MovementDirection::StrafeRight:
-			player->translate(glm::vec3(perpendicularDirection.x, 0.0f, perpendicularDirection.z));
+			LOCAL_PLAYER.translate(glm::vec3(perpendicularDirection.x, 0.0f, perpendicularDirection.z));
 			break;
 		default:
 			break;
+		}
 	}
 }
 
-void Input::HandleMouse(EntityPlayer* player, SDL_MouseMotionEvent* mME) {
+void Input::HandleMouse(SDL_MouseMotionEvent* mME) {
 
-	player->rotateCamera(mME->yrel, mME->xrel);
-
+	LOCAL_PLAYER.rotateCameraInput(mME->yrel, mME->xrel);
 }
 
-void Input::HandleMouseButtonDown(EntityPlayer* player, SDL_MouseButtonEvent* mBE) {
+void Input::HandleMouseButtonDown(SDL_MouseButtonEvent* mBE) {
 }
 
-void Input::HandleMouseButtonUp(EntityPlayer* player, SDL_MouseButtonEvent* mBE) {
+void Input::HandleMouseButtonUp(SDL_MouseButtonEvent* mBE) {
 }
 
-void Input::Update(EntityPlayer* player) {
+void Input::Update() {
 	if (dirForward) {
-		HandleMovement(player, MovementDirection::Forward);
-
+		HandleMovement(MovementDirection::Forward);
 	}
 	if (dirBackward) {
-		HandleMovement(player, MovementDirection::Backward);
+		HandleMovement(MovementDirection::Backward);
 	}
 	if (dirSLeft) {
-		HandleMovement(player, MovementDirection::StrafeLeft);
+		HandleMovement(MovementDirection::StrafeLeft);
 	}
 	if (dirSRight) {
-		HandleMovement(player, MovementDirection::StrafeRight);
+		HandleMovement(MovementDirection::StrafeRight);
 	}
 }

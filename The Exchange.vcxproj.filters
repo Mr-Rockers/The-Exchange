@@ -74,6 +74,9 @@
     <ClCompile Include="src/Source Files/Game Engine/Render Classes/Shader.cpp">
       <Filter>src\Source Files\Game Engine\Render Classes</Filter>
     </ClCompile>
+    <ClCompile Include="src\Source Files\Game Engine\Render Classes\Render.cpp">
+      <Filter>src\Source Files\Game Engine\Render Classes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src/Header Files/Game Engine/Audio Classes/Audio.h">

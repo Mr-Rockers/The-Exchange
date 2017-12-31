@@ -142,6 +142,7 @@
     <ClCompile Include="src/Source Files/Game Engine/Main.cpp" />
     <ClCompile Include="src/Source Files/Game Engine/Render Classes/RenderModel.cpp" />
     <ClCompile Include="src/Source Files/Game Engine/Render Classes/Shader.cpp" />
+    <ClCompile Include="src\Source Files\Game Engine\Render Classes\Render.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src/Header Files/Game Engine/Audio Classes/Audio.h" />

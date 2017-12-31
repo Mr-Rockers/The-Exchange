@@ -78,6 +78,7 @@ ShaderProgram::ShaderProgram(std::string customName, std::string* locations, GLe
 }
 
 ShaderProgram::~ShaderProgram() {
+	std::cout << "Deleted shader program. (" << this->shaderProgramID << ").\n";
 	glDeleteProgram(this->shaderProgramID);
 }
 

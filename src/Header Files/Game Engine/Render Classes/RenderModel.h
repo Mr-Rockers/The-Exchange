@@ -15,7 +15,8 @@ class RenderModel {
 
 public:
 	static void Load(std::string& location, std::string& preferredShader, int& elementCount, std::vector<int>& elementOrder, std::vector<float>& elementColours, std::vector<float>& elementCoordPoints, std::vector<float>& elementUVs);
-	
+
+	RenderModel() {}
 	RenderModel(std::string location);
 	virtual ~RenderModel();
 

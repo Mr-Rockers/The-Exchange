@@ -8,6 +8,7 @@ class ShaderProgram {
 	bool programError;
 	std::string name;
 public:
+	ShaderProgram() {}
 	ShaderProgram(std::string customName, std::string* locations, GLenum* shaderTypes, int count);
 	virtual ~ShaderProgram();
 
